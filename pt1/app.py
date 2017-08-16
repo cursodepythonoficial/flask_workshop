@@ -8,4 +8,6 @@ def home():
     # bla # uncomment to generate error
     return "Hello World"
 
-app.run(use_reloader=True)
+
+if __name__ == "__main__":
+    app.run(use_reloader=True)
