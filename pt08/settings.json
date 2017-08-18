@@ -1,4 +1,5 @@
 {
     "SECRET_KEY": "sfdfsdf-45435435-fsfdsfsdf-thytj",
-    "DEBUG": true
+    "DEBUG": true,
+    "TEMPLATES_AUTO_RELOAD": true
 }

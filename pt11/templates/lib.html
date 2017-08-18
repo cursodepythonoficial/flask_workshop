@@ -1,0 +1,5 @@
+{% macro menu_item(endpoint, name) -%}
+  <li class="nav-item {%if request.endpoint == endpoint %}active{%endif%}">
+    <a class="nav-link" href="{{ url_for(endpoint) }}"> {{name}} </a>
+  </li>
+{%- endmacro %}

@@ -11,9 +11,27 @@
     <form action="{{ request.path }}" method="post" enctype="multipart/form-data">
         <label for="name">Name:</label><input type="text" id="name" name="name"><br>
         <label for="level">Level:</label><input type="number" name="level" id="level"><br>
-        <label for="content">Content File:</label><input type="file" name="content" id="content">
+        <label for="content">Content File:</label><input type="file" name="content" id="content"><br>
         <input type="submit" value="Send">
     </form>
+
+
+
+
+
+
+
+
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
 
 </body>
 </html>

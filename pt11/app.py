@@ -1,48 +1,30 @@
-from flask import Flask, jsonify, Response, render_template, Markup
+from flask import Flask, render_template
+from form import ContactForm
+
+# from utils import build_menu_item, build_menu_item_as_filter
 
 app = Flask(__name__)
-app.config['DEBUG'] = False
+app.config['DEBUG'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['SECRET_KEY'] = "secret-here"
+
+# app.add_template_global(build_menu_item)
+# app.add_template_filter(build_menu_item_as_filter, name='menu')
 
 
-# Views should return a Response object
 @app.route('/')
-def response():
-    return Response("Hello Response", status=200, headers={'foo': 'bar'})
-
-
-# Return string to get automatic Response with status_code 200 Ok
-@app.route("/auto")
 def home():
-    return "Automatic Response"
+    return render_template('home.html')
 
 
-# return a tuple of "string", status_code to specify it
-@app.route("/status")
-def hello():
-    return "Status Code", 200
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
-# return a tuple of "string", status_code, headers
-@app.route("/headers")
-def world():
-    return "Headers", 201, {'Content-Type': 'text', 'mytag': 'foo'}
-
-
-# JSON should be jsonified
-@app.route('/json')
-def json():
-    data = {'data': {'a': 'b'}}
-    #return str(data)
-    return jsonify(data)
-
-
-# html text surrounded by Markup
-@app.route('/tags')
-def tags():
-    return Markup("<ul><li>Hello</li><li>World</li></ul>")
-
-
-# or template rendered
-@app.route('/template')
-def template():
-    return render_template('template.html', msg="Hello Grupy")
+@app.route('/contact', methods=('GET', 'POST'))
+def contact():
+    form = ContactForm()
+    if form.validate_on_submit():
+        return "Mensagem enviada com sucesso!"
+    return render_template('contact.html', form=form)

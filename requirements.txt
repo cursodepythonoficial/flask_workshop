@@ -1,0 +1,11 @@
+flask
+flask-admin
+tinydb
+tinymongo
+pymongo
+flask-admin
+ipython
+ipdb
+flask-debugtoolbar
+flask-wtf
+flask-classy

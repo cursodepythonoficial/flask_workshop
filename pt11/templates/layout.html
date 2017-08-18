@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} Awesome {% endblock %}</title>
+    {% block head %}
+        <!-- TODO: use url_for here: -->
+        <link rel="stylesheet" href="/static/bootstrap.min.css">
+    {% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<a class="navbar-brand" href="#">Mysite</a>
+{% block nav %}
+<!-- TODO: Iterate over a list of menu items to generate menu -->
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+         <!-- TODO: template global and filter -->
+         <!-- {% from 'lib.html' import menu_item with context %} -->
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+      </div>
+{% endblock %}
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        {% block top %}
+        <h1 class="display-3">Welcome to my ugly website!!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        {% endblock %}
+    </div>
+</div>
+
+<div class="container">
+{% block content %}
+<div class="row">
+<p>
+    Content comes here!
+</p>
+</div>
+{% endblock %}
+</div>
+
+<div class="container">
+<footer>
+{% block footer %}
+    <address>
+    Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+    Visit us at: Example.com Box 564, Disneyland USA<br>
+    Copyright 1996
+    </address>
+{% endblock %}
+</footer>
+</div>
+
+{% block tail%}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/static/lib.js"></script>
+<script>
+    hello("World");
+</script>
+{% endblock %}
+
+</body>
+</html>

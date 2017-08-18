@@ -1,6 +1,16 @@
 from uuid import uuid4
-from flask import Flask, jsonify, render_template, request, session, abort
 
+from flask import (
+    Flask,
+    abort,
+    flash,
+    jsonify,
+    render_template,
+    request,
+    session
+)
+
+from form import MyForm
 from functions import upperfy
 
 app = Flask(__name__)
@@ -68,6 +78,8 @@ def htmlform():
     level = request.form.get('level')
     content = request.files.get('content')
 
+    # How to validate?
+
     # process data and return the result
     return render_template(
         'success.html', name=name, level=level, content=content.stream.read()
@@ -100,3 +112,19 @@ def safeform():
     return render_template(
         'success.html', name=name, level=level, content=content.stream.read()
     )
+
+
+
+# WTFORM
+
+@app.route('/wtform', methods=('GET', 'POST'))
+def submit():
+    form = MyForm()
+    if form.validate_on_submit():
+        return render_template(
+            'success.html',
+            name=form.name.data,
+            level=form.level.data,
+            content=form.content.data.stream.read()
+        )
+    return render_template('wtform.html', form=form)

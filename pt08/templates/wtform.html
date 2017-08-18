@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WT Form</title>
+</head>
+<body>
+
+   {%if form.errors %}<ul>
+     {% for field, errors in form.errors.items() %}<li>
+         {{field}} {% for error in errors %}{{ error }}{% endfor %}
+     </li>{% endfor %}
+   </ul>{% endif %}
+
+    <form action="{{ request.path }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {{ form.name }}<br>
+        {{ form.level }}<br>
+        {{ form.content }}<br>
+        <input type="submit" value="Send">
+    </form>
+
+</body>
+</html>
