@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<!-- TODO: Use super here -->
+{# super() #}
+<h1>Envie uma mensagem</h1>
+{% endblock %}
+
+{% block body %}
+
+       {%if form.errors %}<ul class="alert alert-danger">
+        {% for field, errors in form.errors.items() %}<li>
+            {{field}} {% for error in errors %}{{ error }}{% endfor %}
+        </li>{% endfor %}
+       </ul>{% endif %}
+
+       <form action="{{ request.path }}" method="post">
+            <div class="form-group">
+           {{ form.csrf_token }}
+            {{form.name.label}}<div class="form-control">{{ form.name }}</div><br>
+            {{form.message.label}}<div class="form-control"> {{ form.message }}</div><br>
+            </form>
+           <input type="submit" value="Send">
+       </form>
+
+{% endblock %}

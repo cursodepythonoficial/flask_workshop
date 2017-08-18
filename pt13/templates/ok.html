@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}Hello!{% endblock %}
+{% block body %}
+  <h1>Welcome!!</h1>
+  <p>Hey it works!!!</p>
+  <hr>
+  The template global: {{ ulfy("hello world from flask") }}<br>
+  The template filter: {{"Hello World From Flask" | listify}}
+{% endblock %}
