@@ -24,6 +24,11 @@ Workshop básico de Flask do http://CursoDePython.com.br
     14. Debugging and Testing
     15. Deploy com gunicorn + nginx
 
+
+## Prepare o ambiente (antes do workshop)
+
+Veja como em: https://github.com/cursodepythonoficial/flask_workshop/blob/master/ENV.md
+
 ## Contatos
 
 
