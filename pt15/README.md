@@ -21,9 +21,21 @@ docker run --name myflask -d -p 80:80 myflask
 ## access
 
 ```bash
-docker ps
 docker exec -t -i myflask  /bin/bash
 ```
+
+
+## Existing Docker image
+```bash
+docker pull cursodepython/flask_workshop
+```
+
+```bash
+docker run --name myflask -d -p 80:80 cursodepython/flask_workshop
+docker exec -t -i myflask  /bin/bash
+```
+
+https://hub.docker.com/r/cursodepython/flask_workshop/
 
 
 ## referencias
