@@ -1,10 +1,11 @@
-# Flask Workshop - pt1
+# Flask Workshop - pt15
 
+```
 python pt1/app.py
 export FLASK_APP=pt1/app.py
 flask run
 flask shell
-
+```
 
 ## deploy
 
@@ -40,5 +41,5 @@ https://hub.docker.com/r/cursodepython/flask_workshop/
 
 ## referencias
 
-https://github.com/rehabstudio/docker-gunicorn-nginx
-https://paulohrpinheiro.xyz/texts/python/2016-11-30-flask-esqueletico.html
+- https://github.com/rehabstudio/docker-gunicorn-nginx
+- https://paulohrpinheiro.xyz/texts/python/2016-11-30-flask-esqueletico.html
