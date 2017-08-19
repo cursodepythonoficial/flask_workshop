@@ -45,7 +45,13 @@ source env/bin/activate
 ## Instale os pacotes que usaremos no workshop
 
 ```bash
-pip3 install flask flask-admin tinydb tinymongo pymongo flask-admin ipython ipdb flask-debugtoolbar flask-wtf flask-classy
+pip3 install flask flask-admin tinydb tinymongo pymongo flask-admin ipython ipdb flask-debugtoolbar flask-wtf flask-classy flask-shell-ipython pytest-flask gunicorn
+```
+
+ou execute
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Verifique que a instalação está ok

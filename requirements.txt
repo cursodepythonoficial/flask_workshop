@@ -9,3 +9,7 @@ ipdb
 flask-debugtoolbar
 flask-wtf
 flask-classy
+flask-shell-ipython
+pytest
+pytest-flask
+gunicorn

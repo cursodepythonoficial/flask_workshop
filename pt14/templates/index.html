@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask App</title>
+</head>
+<body>
+
+  <h1>Flask Application</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes alert alert-primary">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+
+</body>
+</html>

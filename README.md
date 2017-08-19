@@ -21,8 +21,8 @@ Workshop básico de Flask do http://CursoDePython.com.br
     11. Jinja Templates e URL Building
     12. Factory Pattern e HTTP Error Handling
     13. Blueprints e Extensões
-    14. Debugging and Testing
-    15. Deploy com gunicorn + nginx
+    14. Testing & Debugging
+    15. Deploy com gunicorn + nginx + docker
 
 
 ## Prepare o ambiente (antes do workshop)
