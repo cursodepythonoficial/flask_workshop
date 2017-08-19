@@ -1,8 +1,8 @@
 # Flask Workshop - pt15
 
 ```
-python pt1/app.py
-export FLASK_APP=pt1/app.py
+python pt15/app.py
+export FLASK_APP=pt15/app.py
 flask run
 flask shell
 ```
